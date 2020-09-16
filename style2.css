@@ -1,0 +1,129 @@
+a{
+    text-decoration: none;
+    color: rgb(26, 24, 24);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+
+a:hover {color :darkgray;}
+a:active {color: red;}
+
+.header {
+    display:grid;
+    grid-template-columns: 50px, 50px, 1fr, 80px, 50px, 50px;
+    /* the columns don't match up. the 1fr. if I put the 1fr in the 3rd position
+    the gmail switches over to the left*/
+    grid-template-rows: 60px;
+    justify-self: center;
+    align-content: center;
+    grid-template-areas: 
+    "about store . gmail image apps acct"
+}
+
+.main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px, 200px; /*recommended to use minmax */
+}
+
+#logo {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: center;
+    align-self: center;
+    font-size: 80px;
+    display: flex;
+    font-family: 'Monteserrat', sans-serif; 
+    padding: 50px;
+    font-weight: bold;
+}
+
+#search_bar{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: center;
+    align-self: center;
+    border-radius: 20px;
+    width: 30vw;
+    height: 3vh;
+    border: .5px solid gainsboro;
+    outline: none; /* this takes away an outline when clicked on, it was kinda ugly*/
+    padding: 5px;
+    font-size: 14pt; 
+}
+
+#search_bar:hover {
+    box-shadow: 2.5px 2.5px 2.5px 2.5px rgba(33,33,33,.2);
+    border-radius: 20px;
+}
+#icon{
+    background-color: rgb(40,8,99);
+    color: white;
+    border-radius: 50%; /* whats the diff b/t px and % in this case?*/
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    padding: 8px, 10px;
+
+}
+.buttons{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    align-content: center;
+    padding: 30px;
+    outline: none;
+}
+#search, #lucky{ 
+    padding: 10px;
+
+}
+
+
+/*the first video I saw had this method but I didn't see a difference when
+I added it in so I just commented it out*/
+/*
+.about {
+    grid-area: about;
+    align-self: center;
+    justify-self: center;
+}
+
+.box store {
+    grid-area: box store;
+}
+
+.gmail{
+    grid-area: box gmail;
+}
+
+.image{
+    grid-area: box image;
+}
+
+.app{
+    grid-area:box app;
+}
+
+.acct{
+    grid-area: box acct;
+}
+*/
+
+
+.footer{
+    width: 100%;
+    position: fixed; /* when  changed the size of the window, the bar stays at the bottom and I don't have to scroll*/
+    bottom: 0;
+    display:grid;
+    grid-template-columns: repeat(7, 1fr); /* I need the 7th column so I can have a blank one in the middle. Should I use stretch?*/
+    grid-template-rows: 30px;
+    background-color: rgb(247, 240, 240);
+   
+    /*grid-template-areas: 
+    "abs bis how privacy terms settings";*/
+}
+
