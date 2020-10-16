@@ -1,3 +1,4 @@
+
 a{
     text-decoration: none;
     color: black;
@@ -10,16 +11,37 @@ text-decoration: underline;}
 a:active {color: red;}
 
 .header {
-    display:grid;
+    display:flex;
     width: 100%;
-    grid-template-columns: 30px, 30px, 1fr, 30px, 30px, 30px;
-    /* the columns don't match up. the 1fr. if I put the 1fr in the 3rd position
-    the gmail switches over to the left*/
-    grid-template-rows: 50px;
-    justify-items: center;
-    align-items: center;
-    grid-template-areas: 
-    "about store blank gmail image apps acct"
+    justify-content: space-between;
+    
+
+}
+
+#left{
+    display: flex;
+    justify-content: flex-start;
+    width: 101vw;
+}
+
+#right{
+    display: flex;
+    justify-content: flex-end;
+	width: 40vw;
+}
+
+
+.rheader {
+    width: 30vw;
+    display: flex;
+    justify-content: flex-end;
+  
+}
+
+.lheader{
+    width: 20vw;
+    display: flex;
+    justify-content: flex-start;
 }
 
 #icon{
@@ -35,6 +57,7 @@ a:active {color: red;}
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 200px, 200px; /*recommended to use minmax */
+   
 }
 
 #logo {
@@ -84,6 +107,13 @@ a:active {color: red;}
     background-color: rgb(247, 240, 240);
     border: none;
     
+}
+
+input{
+    outline: none;
+    width: 30vw;
+    border: none;
+    height: 3vh;
 }
 
 #lucky{
